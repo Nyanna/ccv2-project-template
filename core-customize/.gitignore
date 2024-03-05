@@ -68,10 +68,14 @@ wro_addons.xml
 # project ignore
 /build/
 /dependencies/
+/bootstrap/
 /cloud-extension-pack/
 gradle.properties
 hybris/config/local.properties
 hybris/config/solr/instances/default/configsets
+.classpath
+.project
+org.eclipse.core.resources.prefs
 
 # developer-specific properties
 hybris/config/local-config/99-local.properties

@@ -1,3 +1,32 @@
 {
-   "commerceSuiteVersion": "2011.9"
+   "commerceSuiteVersion": "2211.17",
+   
+	"useConfig": {
+		"properties": [
+			{
+				"location": "hybris/config/scc/logging.properties"
+			},
+			{
+				"location": "hybris/config/scc/global.properties"
+			},
+			{
+				"location": "hybris/config/scc/local-d1.properties",
+				"persona": "development"
+			},
+			{
+				"location": "hybris/config/scc/local-s1.properties",
+				"persona": "staging"
+			},
+			{
+				"location": "hybris/config/scc/local-p1.properties",
+				"persona": "production"
+			}
+	    ],
+		"extensions": {
+			"location": "hybris/config/localextensions.xml"
+		},
+		"solr": {
+	    "location": "solrcustom"
+	}
+	},
 }

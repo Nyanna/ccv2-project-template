@@ -2,43 +2,35 @@
 
 > **Initial project bootstrap**
 >
-> 1. Download the latest SAP Commerce 2011 release zip file and put it into the `dependencies` folder
+> 1. Download the latest SAP Commerce 2211 release zip file and put it into the `dependencies` folder
 >    using the correct file name, e.g.
 >
 >    ```bash
->    cp ~/Downloads/CXCOMM201100P*.ZIP ./dependencies/hybris-commerce-suite-2011.6.zip
+>    cp ~/Downloads/CXCOMM201100P*.ZIP ./dependencies/hybris-commerce-suite-2211.17.zip
 >    ```
 >    *Or* configure your S-User (e.g. using `gradle.properties`) and run `./gradlew downloadAndVerifyPlatform`
 >    
 > 1. Bootstrap the starting point for your Commerce project by running the following command:
 >
 >    ```bash
->    ./gradlew -b bootstrap.gradle.kts \
->      -PprojectName=<name, e.g. coolshop> \
->      -ProotPackage=<package, e.g. com.cool.shop> \
->      -PintExtPackVersion=2102.1    # (optional) enable "SAP Commerce Cloud, Integration Extension Pack"
+>    ./gradlew createDefaultConfig setupLocalDevelopment
 >    ```
 >
 >    Read the output!
 >
->    (If you use a headless setup: You can delete the generated `<projectName>storefront` extension
->     afterwards. Don't forget to remove it from `localextensions.xml` / `manifest.jsonnet` too)
-> 1. Review the generated configuration in `hybris/config`, especially the `hybris/config/environment/*.properties`
->    files and `localextensions.xml` (search for `TODO:` comments)
-> 1. Update the `manifest.jsonnet` (again, search for `TODO:` comments).\
->    You can use the [jsonnet] file to update the `manifest.json` for your project.
-> 1. Delete all bootstrap files, you don't need them anymore:
->
->    ```bash
->    rm -r bootstrap*
->    ```
->
-> 1. Delete this quote
 > 1. Commit and push the changes to your project repository :)
 
 We use Gradle + [commerce-gradle-plugin][plugin] to automate whole project setup.
 
 [plugin]: https://github.com/SAP/commerce-gradle-plugin
+
+## WHat was done to to origin Github project
+1. Graddle Wrapper update
+1. Graddle Wrapper properties update
+1. Updated build.gradle.kts
+1. Adapted .gitignore
+1. Removed outdated and unused files
+1. Adapted manifest with recent version and common config template settings
 
 ## Setup local development
 
