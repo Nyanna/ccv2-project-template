@@ -1,32 +1,128 @@
 {
-   "commerceSuiteVersion": "2211.17",
-   
-	"useConfig": {
-		"properties": [
-			{
-				"location": "hybris/config/scc/logging.properties"
-			},
-			{
-				"location": "hybris/config/scc/global.properties"
-			},
-			{
-				"location": "hybris/config/scc/local-d1.properties",
-				"persona": "development"
-			},
-			{
-				"location": "hybris/config/scc/local-s1.properties",
-				"persona": "staging"
-			},
-			{
-				"location": "hybris/config/scc/local-p1.properties",
-				"persona": "production"
-			}
-	    ],
-		"extensions": {
-			"location": "hybris/config/localextensions.xml"
-		},
-		"solr": {
-	    "location": "solrcustom"
-	}
-	},
+  "commerceSuiteVersion": "2211.19",
+  "enableImageProcessingService": true,
+  "extensions": [
+    "platformbackoffice",
+    "powertoolsstore",
+    "yacceleratorcore",
+
+    "solrserver",
+    "solrfacetsearch",
+    "adaptivesearch",
+    "adaptivesearchwebservices",
+    "adaptivesearchfacades",
+    "adaptivesearchbackoffice",
+    "adaptivesearchsolr",
+
+    "cmsbackoffice",
+    "cmssmartedit",
+    "cmssmarteditwebservices",
+    "cmswebservices",
+    "permissionswebservices",
+    "previewwebservices",
+    "smartedit",
+    "smarteditwebservices",
+  ],
+  "useConfig": {
+    "properties": [
+      {
+        "location": "hybris/config/environments/local-dev.properties",
+        "persona": "development"
+      },
+      {
+        "location": "hybris/config/environments/local-stage.properties",
+        "persona": "staging"
+      },
+      {
+        "location": "hybris/config/environments/local-prod.properties",
+        "persona": "production"
+      },
+      {
+        "location": "hybris/config/environments/common.properties"
+      },
+      {
+        "aspect": "api",
+        "location": "hybris/config/environments/api.properties"
+      },
+      {
+        "aspect": "backoffice",
+        "location": "hybris/config/environments/backoffice.properties"
+      }
+    ],
+    "extensions": {
+      "location": "hybris/config/localextensions.xml",
+      "exclude": [
+        "azurecloudhotfolder",
+        "cloudmediaconversion",
+        "cloudcommons",
+        "cloudhotfolder"
+      ],
+    },
+    "properties": [
+      {
+        "key": "lang.packs",
+        "value": "de,en"
+      },
+      {
+        "key": "endpoint.hac.platform.init.disabled",
+        "value": "true"
+      },
+      {
+        "key": "endpoint.hac.platform.update.disabled",
+        "value": "true"
+      },
+      {
+        "key": "googleApiKey",
+        "value": ""
+      },
+      {
+        "key": "occ.rewrite.overlapping.paths.enabled",
+        "value": "true"
+      },
+      {
+        "key": "apiregistryservices.events.exporting",
+        "value": "true"
+      },
+      {
+        "key": "backoffice.solr.search.index.autoinit",
+        "value": "true"
+      },
+      {
+        "key": "mail.smtp.server",
+        "value": ""
+      },
+      {
+        "key": "mail.smtp.port",
+        "value": ""
+      },
+      {
+        "key": "mail.smtp.user",
+        "value": ""
+      },
+      {
+        "key": "mail.smtp.password",
+        "value": ""
+      },
+      {
+        "key": "mail.use.tls",
+        "value": "false"
+      },
+      {
+        "key": "emailservice.send.enabled",
+        "value": "true"
+      },
+      {
+        "key": "outboundservices.monitoring.enabled",
+        "value": "true"
+      },
+      {
+        "key": "session.serialization.check.response.error",
+        "value": "true"
+      },
+      {
+        "key": "b2bcommerce.unitlevelorders.enabled",
+        "value": "true"
+      }
+    ]
+  }
 }
